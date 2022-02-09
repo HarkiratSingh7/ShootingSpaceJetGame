@@ -23,8 +23,12 @@ JET_IMG = 'jet.png'
 SHOT_IMG = 'shot.png'
 ENEMY_IMG = 'enemy.png'
 
-# Displacement Constraints
+# Constraints
 DX_JET = 5
 DY_JET = 5
 DY_SHOT = 3
 DY_ENEMY = 2
+ALLOWED_JET_ENEMY_OVERLAP = 30
+MIN_GEN_ENEMIES = 0
+MIN_ENSURE_ENEMIES = 2
+MAX_GEN_ENEMIES = 5
