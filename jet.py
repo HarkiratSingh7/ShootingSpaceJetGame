@@ -30,10 +30,10 @@ class jet(pygame.sprite.Sprite):
             self.rect.move_ip(-DX_JET, 0)
         if self.rect.right < SCREEN_WIDTH and pressed_keys[pygloc.K_RIGHT]:
             self.rect.move_ip(DX_JET, 0)
-        if self.rect.top > 0 and pressed_keys[pygloc.K_UP]:
-            self.rect.move_ip(0, -DY_JET)
-        if self.rect.bottom < SCREEN_HEIGHT and pressed_keys[pygloc.K_DOWN]:
-            self.rect.move_ip(0, DY_JET)
+        # if self.rect.top > 0 and pressed_keys[pygloc.K_UP]:
+        #     self.rect.move_ip(0, -DY_JET)
+        # if self.rect.bottom < SCREEN_HEIGHT and pressed_keys[pygloc.K_DOWN]:
+        #     self.rect.move_ip(0, DY_JET)
     
     def fireUp(self, Shots):
         fire = shot((self.rect.centerx, self.rect.top))
