@@ -1,7 +1,6 @@
 import pygame, sys, random
 from jet import jet
 from enemy import enemy
-import pygame.locals as pygloc
 from res import *
 
 pygame.init()
@@ -18,6 +17,7 @@ Shots = []
 Enemies = []
 
 while True:
+    # Game Global Events
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -26,35 +26,44 @@ while True:
             if event.key == pygame.K_SPACE:
                 Player.fireUp(Shots)
 
-    # Generate enemies
+    # Generate non overlapping enemies
     if len(Enemies) <= 5:
         pos = (random.randint(ENEMY_SCALE[0] // 2, SCREEN_WIDTH - ENEMY_SCALE[0] // 2), 0)
         new_enemy = enemy(pos)
-        Enemies.append(new_enemy)
-    # Events
+        if new_enemy.rect.collidelist(Enemies) < 0:
+            Enemies.append(new_enemy)
+    
+    # Updates
     Player.update()
     for fire in Shots:
         fire.update()
+    
+    # Check if shots went out of view
     Shots = list(filter(lambda fire: fire.valid, Shots))
 
+    # Check if enemies were hit by shots
     for ene in Enemies:
         ene.update()
-        index = ene.rect.collidelist(Shots)
-        if index >= 0:
-            Enemies.remove(ene)
-            Shots.pop(index)
+        for fire in Shots:
+            if ene.shotCollided(fire):
+                Enemies.remove(ene)
+                Shots.remove(fire)
+
+    # Check if the enemies went out of view            
     Enemies = list(filter(lambda ene: ene.valid, Enemies))    
 
+    # Check if the player jet collided with enemy
     if Player.rect.collidelist(Enemies) >= 0:
         # Game Over
         raise 'Game Over'
 
-    # Updates
-    GameScreen.fill(DARK)
-    Player.draw(GameScreen)
+    # Update the screen
+    GameScreen.fill(DARK)       # Clear Screen
+    Player.draw(GameScreen)     # Player Jet
     for fire in Shots:
-        fire.draw(GameScreen)
+        fire.draw(GameScreen)   # Shots
     for ene in Enemies:
-        ene.draw(GameScreen)
-    pygame.display.update()
-    FramePerSec.tick(FPS)
+        ene.draw(GameScreen)    # Enemies
+    pygame.display.update()     # Update the screen
+    
+    FramePerSec.tick(FPS)       
