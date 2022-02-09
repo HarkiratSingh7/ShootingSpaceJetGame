@@ -11,6 +11,11 @@ class enemy(pygame.sprite.Sprite):
         self.rect.center = origin
         self.valid = True
 
+    def shotCollided(self, fire):
+        if self.rect.left <= fire.rect.left and self.rect.right >= fire.rect.right:
+            if self.rect.top <= fire.rect.top and self.rect.bottom >= fire.rect.bottom:
+                return True
+
     def update(self):
         if self.rect.bottom < SCREEN_HEIGHT:
             self.rect.move_ip(0, DY_ENEMY)
