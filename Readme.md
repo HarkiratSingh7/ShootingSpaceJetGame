@@ -1,5 +1,5 @@
 # Shooting Space Jet Game
-I created this game for practice purpose. I used pygame to implement the game. It has a player jet which can be moved left or right and can shot to destroy enemy ships.
+I created this game for practice purpose. I used pygame to implement the game. It has a player jet which can be moved left or right and can shoot to destroy enemy ships.
 
 ## How to run the game ?
 1. Download the release package.
