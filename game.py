@@ -27,11 +27,13 @@ while True:
                 Player.fireUp(Shots)
 
     # Generate non overlapping enemies
-    if len(Enemies) <= 5:
-        pos = (random.randint(ENEMY_SCALE[0] // 2, SCREEN_WIDTH - ENEMY_SCALE[0] // 2), 0)
-        new_enemy = enemy(pos)
-        if new_enemy.rect.collidelist(Enemies) < 0:
-            Enemies.append(new_enemy)
+    if len(Enemies) < MIN_ENSURE_ENEMIES:
+        count = random.randint(MIN_GEN_ENEMIES, MAX_GEN_ENEMIES)
+        for i in range(count):
+            pos = (random.randint(ENEMY_SCALE[0] // 2, SCREEN_WIDTH - ENEMY_SCALE[0] // 2), 0)
+            new_enemy = enemy(pos)
+            if new_enemy.rect.collidelist(Enemies) < 0:
+                Enemies.append(new_enemy)
     
     # Updates
     Player.update()
@@ -53,9 +55,9 @@ while True:
     Enemies = list(filter(lambda ene: ene.valid, Enemies))    
 
     # Check if the player jet collided with enemy
-    if Player.rect.collidelist(Enemies) >= 0:
-        # Game Over
-        raise 'Game Over'
+    for ene in Enemies:
+        if Player.enemyCollided(ene):
+            raise 'Game Over'
 
     # Update the screen
     GameScreen.fill(DARK)       # Clear Screen
