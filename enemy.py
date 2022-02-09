@@ -2,7 +2,7 @@ import pygame
 from res import *
 
 class enemy(pygame.sprite.Sprite):
-    def __init__(self, origin):
+    def __init__(self, origin, jdg):
         super().__init__()
         self.image = pygame.image.load(ENEMY_IMG)
         self.image = pygame.transform.scale(self.image, ENEMY_SCALE)
@@ -10,14 +10,17 @@ class enemy(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = origin
         self.valid = True
+        self.jdg = jdg
 
-    def shotCollided(self, fire):
+    def shotCollided(self, fire, surface):
         if self.rect.left <= fire.rect.left and self.rect.right >= fire.rect.right:
             if self.rect.top <= fire.rect.top and self.rect.bottom >= fire.rect.bottom:
+                self.jdg.addPoints()
                 return True
+        return False
 
     def update(self):
-        if self.rect.bottom < SCREEN_HEIGHT:
+        if self.rect.top < SCREEN_HEIGHT:
             self.rect.move_ip(0, DY_ENEMY)
         else:
             self.valid = False
