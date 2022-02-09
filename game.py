@@ -47,6 +47,9 @@ Judge = judge(GameScreen)
 while True:
     if ShowWelcome:
         for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_s:
                     Player = jet()
@@ -64,6 +67,9 @@ while True:
 
     if not Judge.valid:
         for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_s:
                     Player = jet()
