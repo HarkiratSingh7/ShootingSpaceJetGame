@@ -11,6 +11,19 @@ class jet(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = JET_CENTER
 
+    def enemyCollided(self, ene):
+        if not (self.rect.bottom - ene.rect.top >= ALLOWED_JET_ENEMY_OVERLAP):
+            return False
+        # Case if enemy collided at right side
+        if self.rect.left >= ene.rect.left and self.rect.left <= ene.rect.right:
+            if ene.rect.bottom - self.rect.top >= ALLOWED_JET_ENEMY_OVERLAP:
+                return True
+        # Case if enemy collided at left side
+        if self.rect.right > ene.rect.left and self.rect.right <= ene.rect.right:
+            if ene.rect.bottom - self.rect.top >= ALLOWED_JET_ENEMY_OVERLAP:
+                return True
+        return False
+
     def update(self):
         pressed_keys = pygame.key.get_pressed()
         if self.rect.left > 0 and pressed_keys[pygloc.K_LEFT]:
