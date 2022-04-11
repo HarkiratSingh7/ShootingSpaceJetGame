@@ -1,5 +1,5 @@
 import pygame
-from res import *
+from shootingspacejetgame.res import *
 
 class explosion(pygame.sprite.Sprite):
     def __init__(self, origin):

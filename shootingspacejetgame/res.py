@@ -22,10 +22,10 @@ DARK = (20, 20, 20)
 LIGHT = (200, 200, 200)
 
 # Images
-JET_IMG = '.\\assets\\jet.png'
-SHOT_IMG = '.\\assets\\shot.png'
-ENEMY_IMG = '.\\assets\\enemy.png'
-EXPLOSION_IMG = '.\\assets\\explosion.png'
+JET_IMG = './shootingspacejetgame/jet.png'
+SHOT_IMG = './shootingspacejetgame/shot.png'
+ENEMY_IMG = './shootingspacejetgame/enemy.png'
+EXPLOSION_IMG = './shootingspacejetgame/explosion.png'
 
 # Constraints
 DX_JET = 5
