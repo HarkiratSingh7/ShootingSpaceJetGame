@@ -1,6 +1,6 @@
 import pygame
-from src.res import *
-from src.shot import shot
+from shootingspacejetgame.res import *
+from shootingspacejetgame.shot import shot
 import pygame.locals as pygloc
 
 class jet(pygame.sprite.Sprite):

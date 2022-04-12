@@ -1,6 +1,6 @@
 from ctypes.wintypes import POINT
 import pygame
-from src.res import *
+from shootingspacejetgame.res import *
 
 class judge:
     def __init__(self, surface):
