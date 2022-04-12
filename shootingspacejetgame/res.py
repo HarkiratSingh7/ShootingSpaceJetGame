@@ -1,3 +1,5 @@
+import os
+
 # Resources and constants
 
 # Screen Constraints
@@ -22,10 +24,10 @@ DARK = (20, 20, 20)
 LIGHT = (200, 200, 200)
 
 # Images
-JET_IMG = './shootingspacejetgame/jet.png'
-SHOT_IMG = './shootingspacejetgame/shot.png'
-ENEMY_IMG = './shootingspacejetgame/enemy.png'
-EXPLOSION_IMG = './shootingspacejetgame/explosion.png'
+JET_IMG = os.path.abspath(os.path.join('shootingspacejetgame', 'assets', 'jet.png'))
+SHOT_IMG = os.path.abspath(os.path.join('shootingspacejetgame', 'assets', 'shot.png'))
+ENEMY_IMG = os.path.abspath(os.path.join('shootingspacejetgame', 'assets', 'enemy.png'))
+EXPLOSION_IMG = os.path.abspath(os.path.join('shootingspacejetgame', 'assets', 'explosion.png'))
 
 # Constraints
 DX_JET = 5
