@@ -1,5 +1,5 @@
 import pygame
-from shootingspacejetgame.res import *
+from src.res import *
 
 class enemy(pygame.sprite.Sprite):
     def __init__(self, origin, jdg):

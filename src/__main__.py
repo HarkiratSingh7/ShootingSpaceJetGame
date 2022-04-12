@@ -1,10 +1,10 @@
 import pygame, sys, random
-from shootingspacejetgame.explosion import explosion
-from shootingspacejetgame.jet import jet
-from shootingspacejetgame.enemy import enemy
-from shootingspacejetgame.judge import judge
-from shootingspacejetgame.star import star
-from shootingspacejetgame.res import *
+from src.explosion import explosion
+from src.jet import jet
+from src.enemy import enemy
+from src.judge import judge
+from src.star import star
+from src.res import *
 
 pygame.init()
 FramePerSec = pygame.time.Clock()
