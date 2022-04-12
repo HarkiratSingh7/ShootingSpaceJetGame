@@ -5,7 +5,7 @@ I created this game for practice purpose. I used pygame to implement the game. I
 1. Download the release package.
 2. Extract the zip file to a folder.
 3. Install pygame module using *pip install pygame* command.
-4. Execute the **game.py** file.
+4. Follow steps in release notes.
 5. The Game shall begin as shown in the screenshots.
 
 ## Screenshots
