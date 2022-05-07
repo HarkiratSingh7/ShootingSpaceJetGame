@@ -24,10 +24,10 @@ DARK = (20, 20, 20)
 LIGHT = (200, 200, 200)
 
 # Images
-JET_IMG = os.path.abspath(os.path.join('shootingspacejetgame', 'assets', 'jet.png'))
-SHOT_IMG = os.path.abspath(os.path.join('shootingspacejetgame', 'assets', 'shot.png'))
-ENEMY_IMG = os.path.abspath(os.path.join('shootingspacejetgame', 'assets', 'enemy.png'))
-EXPLOSION_IMG = os.path.abspath(os.path.join('shootingspacejetgame', 'assets', 'explosion.png'))
+JET_IMG = os.path.abspath(os.path.join('assets', 'jet.png'))
+SHOT_IMG = os.path.abspath(os.path.join('assets', 'shot.png'))
+ENEMY_IMG = os.path.abspath(os.path.join('assets', 'enemy.png'))
+EXPLOSION_IMG = os.path.abspath(os.path.join('assets', 'explosion.png'))
 
 # Constraints
 DX_JET = 5

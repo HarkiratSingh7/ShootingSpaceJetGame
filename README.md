@@ -8,6 +8,11 @@ I created this game for practice purpose. I used pygame to implement the game. I
 4. Follow steps in release notes.
 5. The Game shall begin as shown in the screenshots.
 
+## How to develop ?
+Open the inner shootingspacejetgame in vscode when developing the game. (Only Game will execute).
+
+Open the main folder (containing setup.py) when developing setup.py. (Game won't execute)
+
 ## Screenshots
 
 ### Start Screen
